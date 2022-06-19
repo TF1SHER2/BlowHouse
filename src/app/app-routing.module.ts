@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContactComponent } from './pages/contact/contact.component';
 import { EventsComponent } from './pages/events/events.component';
 import { HomeComponent } from './pages/home/home.component';
-import { SocialMediaComponent } from './pages/social-media/social-media.component';
+import { MediaComponent } from './pages/media/media.component';
+import { StoreComponent } from './pages/store/store.component';
 
 const routes: Routes = [
   {
@@ -15,8 +17,16 @@ const routes: Routes = [
     component: EventsComponent
   },
   {
-    path: 'social-media',
-    component: SocialMediaComponent
+    path: 'media',
+    component: MediaComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
+  },
+  {
+    path: 'store',
+    component: StoreComponent
   },
 ];
 

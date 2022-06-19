@@ -1,1 +1,11 @@
-<p>header works!</p>
+<div *ngIf="!isHome" class="row mx-0">
+    <a [routerLink]="'/'" class="col-auto">logo goes here</a>
+    <div class="col px-0">
+      <div class="row mx-0 justify-content-end">
+        <a [routerLink]="'/events'" class="col-auto">Events</a>
+        <a [routerLink]="'/media'" class="col-auto">Media</a>
+        <a [routerLink]="'/contact'" class="col-auto">Contact</a>
+        <a [routerLink]="'/store'" class="col-auto">Store</a>
+      </div>
+    </div>
+</div>

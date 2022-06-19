@@ -1,9 +1,11 @@
 <header class="w-100">
   <app-header></app-header>
 </header>
-<div class="container">
-  <div class="row">
-    <div class="col-12">
+<div class="px-0" [ngClass]="{
+  'container': containerType === 'normal',
+  'container-fluid': containerType === 'fluid' }">
+  <div class="row mx-0">
+    <div class="col-12 px-0">
       <router-outlet></router-outlet>
     </div>
   </div>
