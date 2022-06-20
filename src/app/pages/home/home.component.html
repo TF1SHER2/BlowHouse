@@ -1,3 +1,51 @@
 <div class="image-container">
   <img src="../../assets/Float.jpg" alt="Image Of Blow House on a Mardi Gras Parade Float" class="w-100">
+  <div class="logo-container">
+    <div class="row mx-0">
+      <div class="col">
+        <span (click)="showMobileMenu = !showMobileMenu" class="fa-solid fa-bars mobile-menu"></span>
+        <div *ngIf="showMobileMenu" class="mobile-menu-items no-select">
+          <a [routerLink]="'/events'" class="menu-item no-select">Upcoming&nbsp;Events</a>
+          <a [routerLink]="'/media'" class="menu-item no-select">Social&nbsp;Media</a>
+          <a [routerLink]="'/contact'" class="menu-item no-select">Contact Us</a>
+          <a [routerLink]="'/store'" class="menu-item no-select">Store</a>
+        </div>
+      </div>
+      <div class="col-auto px-0 logo-col">
+        <img src="../../assets/logo.jpg" alt="Blow House Logo" class="logo">
+        <div class="menu no-select">
+          <a [routerLink]="'/events'" class="menu-item no-select">Upcoming&nbsp;Events</a>
+          <a [routerLink]="'/media'" class="menu-item no-select">Social&nbsp;Media</a>
+          <a [routerLink]="'/contact'" class="menu-item no-select">Contact Us</a>
+          <a [routerLink]="'/store'" class="menu-item no-select">Store</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-container">
+  <div class="triangle"></div>
+  <div class="mobile-menu"></div>
+  <div class="text-block">
+    <div class="row mx-0">
+      <h1 class="col-12">Blow House Brass Band</h1>
+      <div class="col-12">
+        In hac habitasse platea dictumst. Cras mauris lorem, lobortis
+        id justo nec, pretium tempor ipsum. Aliquam felis nulla,
+        fermentum nec elementum viverra, ornare a leo. Nam pharetra,
+        est ac suscipit iaculis, ipsum lacus euismod dui, in convallis
+        felis ex eget libero. Please do not put that corny bit that sounds like
+        rick and morty two brothers. Nulla eget orci rutrum, finibus velit id,
+        elementum ipsum. Morbi et dolor a nisi aliquam hendrerit. Nam
+        in quam leo. Nulla vestibulum augue eget nulla lobortis, ac rutrum
+        arcu mattis. Sed volutpat massa ut felis cursus dapibus.
+      </div>
+      <h2 class="col-12 know-your-blow">
+        Know your blow!
+      </h2>
+      <div class="col-12">
+        Small bios next to pics on alternating sides down in this block
+      </div>
+    </div>
+  </div>
 </div>

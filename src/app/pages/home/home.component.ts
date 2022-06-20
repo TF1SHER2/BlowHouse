@@ -12,6 +12,7 @@ import { AppState } from 'src/app/models/app.state';
 export class HomeComponent implements OnInit, OnDestroy {
 
   subs: Subscription[] = [];
+  showMobileMenu: boolean = false;
 
   constructor(private store: Store<AppState>) { }
 
