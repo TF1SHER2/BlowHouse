@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { AppState, selectContainerType } from './models/app.state';
@@ -16,14 +16,15 @@ export class AppComponent implements OnInit, OnDestroy {
   subs: Subscription[] = [];
   containerType: 'normal' | 'fluid' = 'normal';
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>,
+              private cd: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.subs.push(this.store.select(selectContainerType)
       .subscribe((containerType: 'normal' | 'fluid' | undefined) => {
         if (containerType) {
-          console.log(containerType);
           this.containerType = containerType;
+          this.cd.detectChanges();
         }
       })
     );

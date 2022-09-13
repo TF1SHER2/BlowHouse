@@ -9,7 +9,6 @@ import { AppState, selectUrl } from 'src/app/models/app.state';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-
   subs: Subscription[] = [];
   isHome: boolean = false;
 
@@ -19,6 +18,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.subs.push(this.store.select(selectUrl).subscribe((url: string) => {
       if (url === '/') {
         this.isHome = true;
+      } else {
+        this.isHome = false;
       }
     }));
   }
