@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
 
 import { StoreComponent } from './store.component';
 
@@ -8,7 +9,10 @@ describe('StoreComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StoreComponent ]
+      declarations: [ StoreComponent ],
+      imports: [
+        StoreModule.forRoot({})
+      ]
     })
     .compileComponents();
   });

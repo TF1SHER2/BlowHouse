@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
 
 import { MediaComponent } from './media.component';
 
@@ -8,7 +9,10 @@ describe('MediaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MediaComponent ]
+      declarations: [ MediaComponent ],
+      imports: [
+        StoreModule.forRoot({})
+      ]
     })
     .compileComponents();
   });

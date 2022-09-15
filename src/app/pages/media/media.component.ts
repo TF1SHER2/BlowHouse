@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { setContainerTypeAction } from 'src/app/actions/global.actions';
+import { AppState } from 'src/app/models/app.state';
 
 @Component({
   selector: 'app-media',
@@ -7,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MediaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
+    this.store.dispatch(setContainerTypeAction({ containerType: 'normal' }));
   }
 
 }
