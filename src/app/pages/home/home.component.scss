@@ -95,6 +95,27 @@
   .text-block {
     width: 100%;
     background-color: $bg-color;
+    margin-top: -15px;
+
+    .title {
+      margin-top: -20px;
+      z-index: 2;
+    }
+
+    .construction-banner {
+      background-color: white;
+      color: $dark-accent;
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      padding: 12px;
+
+      .cta {
+        font-size: 18px;
+        padding: 8px 0 0 0;
+        display: inline-block;
+      }
+    }
 
     .know-your-blow {
       text-align: right;
