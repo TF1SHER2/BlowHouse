@@ -1,8 +1,8 @@
-import { setScreenWidthAction } from './actions/global.actions';
+import { setScreenWidthAction } from './ngrx/actions/global.actions';
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { AppBreakpoints, AppState, selectContainerType, selectScreenWidth } from './models/app.state';
+import { AppBreakpoints, AppState, selectContainerType, selectScreenWidth } from './ngrx/app.state';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 
 @Component({

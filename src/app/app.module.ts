@@ -1,6 +1,7 @@
+import { AuthModule } from '@auth0/auth0-angular';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ROOT_REDUCER } from './models/app.state';
+import { ROOT_REDUCER } from './ngrx/app.state';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -12,6 +13,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { MediaComponent } from './pages/media/media.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { StoreComponent } from './pages/store/store.component';
+import { _globals } from './models/common';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,7 @@ import { StoreComponent } from './pages/store/store.component';
     HeaderComponent,
     MediaComponent,
     ContactComponent,
-    StoreComponent
+    StoreComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,12 @@ import { StoreComponent } from './pages/store/store.component';
       maxAge: 25,
       logOnly: false
     }),
-    StoreRouterConnectingModule.forRoot()
+    StoreRouterConnectingModule.forRoot(),
+    AuthModule.forRoot({
+      domain: _globals.domain,
+      clientId: _globals.clientId,
+      audience: _globals.audience,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

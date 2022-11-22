@@ -32,7 +32,16 @@
       <div class="col-12">
         <div class="construction-banner">
           Our site is currently under construction.<br>
-          <span class="cta">Please click <a href="mailTo:Blowhousebrass@gmail.com">here</a> to contact us for booking.</span>
+          <span class="cta">Please click <a href="mailTo:Blowhousebrass@gmail.com">here</a> to contact us for booking.</span> <br>
+          <ng-container *ngIf="authService.isAuthenticated() | async; else loggedOut">
+            <button (click)="authService.logout(document.location.origin)">
+              Log out
+            </button>
+          </ng-container>
+
+          <ng-template #loggedOut>
+            <button (click)="authService.loginWithRedirect()">Log in</button>
+          </ng-template>
         </div>
       </div>
       <!-- <div class="col-12 text-center">

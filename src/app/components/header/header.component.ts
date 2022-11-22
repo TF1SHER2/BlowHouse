@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { AppState, selectUrl } from 'src/app/models/app.state';
+import { AppState, selectUrl } from 'src/app/ngrx/app.state';
 
 @Component({
   selector: 'app-header',

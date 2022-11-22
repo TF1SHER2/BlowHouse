@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { setContainerTypeAction } from 'src/app/actions/global.actions';
-import { AppState } from 'src/app/models/app.state';
+import { setContainerTypeAction } from 'src/app/ngrx/actions/global.actions';
+import { AppState } from 'src/app/ngrx/app.state';
 
 @Component({
   selector: 'app-contact',

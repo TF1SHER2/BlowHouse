@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { GlobalState } from "../models/app.state";
+import { GlobalState } from "../app.state";
 import { setContainerTypeAction, SetContainerTypeProps, setScreenWidthAction, SetScreenWidthProps } from "../actions/global.actions"
 
 const initialState: GlobalState = {};
