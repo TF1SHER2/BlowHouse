@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   subs: Subscription[] = [];
   showMobileMenu: boolean = false;
-
+  
   constructor(private store: Store<AppState>,
               public authService: AuthenticationService,
               @Inject(DOCUMENT) public document: Document) { }

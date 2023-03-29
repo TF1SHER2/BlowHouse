@@ -24,3 +24,8 @@ body {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
+
+@font-face{
+  font-family:Anton;
+  src: url('/src/assets/fonts/Anton-Regular.ttf');
+}
