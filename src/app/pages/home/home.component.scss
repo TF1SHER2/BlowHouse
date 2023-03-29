@@ -1,81 +1,82 @@
 @import "/src/app/variables.scss";
+@import "/src/styles.scss";
 
 .image-container {
   width: 100%;
 
-  .logo-container {
-    position: absolute;
-    top: 2rem;
+.logo-container {
+  position: absolute;
+  top: 2rem;
+  width: 100%;
+  padding-right: 2rem;
+
+  .logo-col {
+    width: 17%;
+  }
+
+  .logo {
     width: 100%;
-    padding-right: 2rem;
+    border-radius: 50%;
+  }
 
-    .logo-col {
-      width: 17%;
+  .mobile-menu {
+    display: none;
+    color: $blow-house-red;
+    font-size: 1.75rem;
+    background-color: $dark-accent;
+    padding: 8px 10px;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 3;
+
+    @media(max-width: map-get($grid-breakpoints , "md" )) {
+      display: inline;
     }
-
-    .logo {
-      width: 100%;
-      border-radius: 50%;
-    }
-
-    .mobile-menu {
-      display: none;
-      color: $blow-house-red;
-      font-size: 1.75rem;
-      background-color: $dark-accent;
-      padding: 8px 10px;
-      border-radius: 8px;
-      position: absolute;
-      z-index: 3;
-
-      @media(max-width: map-get($grid-breakpoints , "md" )) {
-        display: inline;
-      }
-    }
+  }
 
 
-    .mobile-menu-items {
-      position: absolute;
-      background-color: $dark-accent;
-      top: 44px;
-      z-index: 2;
-      margin-top: -44px;
-      border-radius: 8px;
-      padding: 44px 10px 15px 10px;
+  .mobile-menu-items {
+    position: absolute;
+    background-color: $dark-accent;
+    top: 44px;
+    z-index: 2;
+    margin-top: -44px;
+    border-radius: 8px;
+    padding: 44px 10px 15px 10px;
 
-      .menu-item {
-        color: $text-color;
-        display: block;
-        text-decoration: none;
-        font-size: 1.15rem;
+    .menu-item {
+      color: $text-color;
+      display: block;
+      text-decoration: none;
+      font-size: 1.15rem;
 
-        &:hover {
-          cursor: pointer;
-        }
-      }
-    }
-
-    .menu {
-      text-align: center;
-      padding-top: 5px;
-
-      .menu-item {
-        color: $text-color;
-        display: block;
-        text-decoration: none;
-        font-size: 1.15rem;
-
-        &:hover {
-          text-decoration: underline;
-          cursor: pointer;
-        }
-      }
-
-      @media(max-width: map-get($grid-breakpoints , "md" )) {
-        display: none;
+      &:hover {
+        cursor: pointer;
       }
     }
   }
+
+  .menu {
+    text-align: center;
+    padding-top: 5px;
+
+    .menu-item {
+      color: $text-color;
+      display: block;
+      text-decoration: none;
+      font-size: 1.15rem;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    @media(max-width: map-get($grid-breakpoints , "md" )) {
+      display: none;
+    }
+  }
+}
 }
 
 .text-container {
@@ -89,7 +90,7 @@
     position: absolute;
     width: 0;
     height: 0;
-    border-bottom: 10vw solid #4d4d4d;
+    border-bottom: 10vw solid #000000;
     border-right: 100vw solid transparent;
     margin-top: -9.8vw;
   }
@@ -126,5 +127,24 @@
       text-align: right;
       margin-top: 2rem;
     }
+  }
+  .icon {
+    filter: invert(9%) sepia(89%) saturate(6073%) hue-rotate(353deg) brightness(137%) contrast(111%);
+  }
+  .nav_container {
+    text-align: center;
+    //padding: 3px
+  }
+  .nav_container a {
+    font-weight: bold;
+    font-family: Anton,sans-serif;
+    text-decoration: none;
+    color: #fe000c;
+  }
+
+  p {
+    padding-left:3%;
+    padding-right:3%;
+    font-family: Anton,sans-serif;
   }
 }
