@@ -14,6 +14,7 @@ import { MediaComponent } from './pages/media/media.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { StoreComponent } from './pages/store/store.component';
 import { _globals } from './models/common';
+import { HeaderTextComponent } from './components/header-text/header-text.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { _globals } from './models/common';
     MediaComponent,
     ContactComponent,
     StoreComponent,
+    HeaderTextComponent,
   ],
   imports: [
     BrowserModule,

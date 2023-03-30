@@ -12,12 +12,6 @@
   <div class="triangle"></div>
   <a *ngIf="!isHome" [routerLink]="'/'" class="col-auto">logo goes here</a>
   <div *ngIf="!isHome" class="col px-0">
-    <div class="row mx-0 justify-content-end">
-      <a [routerLink]="'/events'" class="col-auto">Events</a>
-      <a [routerLink]="'/media'" class="col-auto">Social Media</a>
-      <a [routerLink]="'/contact'" class="col-auto">Contact</a>
-      <a href="https://forms.gle/JuEy3aPKBddcRBGVA" target="_blank" class="col-auto">Store</a>
-      <!--<a [routerLink]="'/store'" class="col-auto">Store</a>-->
-    </div>
+    <app-header-text></app-header-text>
   </div>
 </div>
