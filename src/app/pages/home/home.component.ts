@@ -16,13 +16,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   subs: Subscription[] = [];
   showMobileMenu: boolean = false;
-  
+
   constructor(private store: Store<AppState>,
               public authService: AuthenticationService,
               @Inject(DOCUMENT) public document: Document) { }
 
   ngOnInit(): void {
-    this.store.dispatch(setContainerTypeAction({ containerType: 'fluid' }));
+    this.store.dispatch(setContainerTypeAction({ containerType: 'normal' }));
     if (this.authService.isAuthenticated()) {
       this.subs.push(this.authService.getUserPermissions().subscribe((permissions) => {
         console.log(permissions);

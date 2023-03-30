@@ -1,7 +1,26 @@
-.icon_container {font-family: 'Courier New', Courier, monospace;
-        text-align: center;
-        padding: 3px}
+@import "/src/app/variables.scss";
+
+.contact-text {
+  text-align: center;
+  font-size: 1.75rem;
+
+  @media(max-width: map-get($grid-breakpoints , "sm" )) {
+    font-size: 1.25rem;
+  }
+}
+
+
 .icon {
-    height: 30px;
-    width: 30px;
-}        
+  color: white;
+  font-size: 65px;
+  object-fit: cover;
+  padding: 0 1rem;
+
+  @media(max-width: map-get($grid-breakpoints , "sm" )) {
+    font-size: 35px;
+  }
+
+  &:hover {
+    color: $blow-house-red;
+  }
+}

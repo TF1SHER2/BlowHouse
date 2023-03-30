@@ -1,0 +1,35 @@
+@import "/src/app/variables.scss";
+
+a {
+  font-weight: bold;
+  font-family: Anton,sans-serif;
+  color: $blow-house-red;
+  text-decoration: none;
+  font-size: 2.15rem;
+
+  &.home-font {
+    font-size: 1.75rem;
+  }
+
+
+  @media(max-width: map-get($grid-breakpoints , "sm" )) {
+    font-size: 1.35rem;
+
+    &.home-font {
+      font-size: 1.35rem;
+    }
+  }
+
+  &:hover {
+    color: white;
+  }
+
+  &.active-link {
+    color: $accent-color;
+
+    &:hover {
+      text-decoration: none;
+      cursor: default;
+    }
+  }
+}

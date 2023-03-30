@@ -1,5 +1,4 @@
 @import "/src/app/variables.scss";
-@import "/src/styles.scss";
 
 .menu {
   text-align: center;
@@ -31,26 +30,42 @@
     height: 100%;
 
     .title {
-      margin-top: -10px;
+      margin-top: -65px;
       z-index: 2;
-      padding: 0 5vw;
-    }
+      padding: 0 15rem 0 0;
 
-    a {
-      font-weight: bold;
-      font-family: Anton,sans-serif;
-      color: #fe000c;
+
+      @media(max-width: map-get($grid-breakpoints , "xl" )) {
+        margin-top: -50px;
+        padding: 0 20rem 0 0;
+      }
+
+      @media(max-width: map-get($grid-breakpoints , "lg" )) {
+        margin-top: -40px;
+        padding: 0 15rem 0 0;
+      }
+      @media(max-width: map-get($grid-breakpoints , "md" )) {
+        margin-top: -25px;
+        padding: 0 10rem 0 1rem;
+      }
+      @media(max-width: map-get($grid-breakpoints , "sm" )) {
+        margin-top: -12px;
+        padding: 0 5rem 0 1rem;
+      }
     }
 
     .icon {
-      filter: invert(9%) sepia(89%) saturate(6073%) hue-rotate(353deg) brightness(137%) contrast(111%);
-      width: 70px;
-      height: 70px;
+      font-size: 65px;
       object-fit: cover;
+      padding: 0 1rem;
+      color: white;
 
       @media(max-width: map-get($grid-breakpoints , "sm" )) {
-        width: 40px;
-        height: 40px;
+        font-size: 35px;
+      }
+
+      &:hover {
+        color: $blow-house-red;
       }
     }
   }

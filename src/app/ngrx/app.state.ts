@@ -2,6 +2,7 @@ import { InjectionToken } from "@angular/core";
 import { getSelectors, routerReducer } from "@ngrx/router-store";
 import * as fromRouter from '@ngrx/router-store';
 import { globalReducer } from "./reducers/global.reducer";
+import { createFeatureSelector, State } from "@ngrx/store";
 
 export enum AppBreakpoints {
   xs = 0,

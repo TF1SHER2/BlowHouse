@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState, selectUrl } from 'src/app/ngrx/app.state';
 
 @Component({
   selector: 'app-header-text',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderTextComponent implements OnInit {
 
-  constructor() { }
+  currentUrl: string = '';
+
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
+    this.store.select(selectUrl).subscribe((url: string) => {
+      this.currentUrl = url;
+    });
   }
 
 }

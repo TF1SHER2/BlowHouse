@@ -2,16 +2,15 @@
   <img src="../../../assets/black-and-white-crop-4.jpeg" alt="Image Of Blow House on a Mardi Gras Parade Float" class="w-100">
   <div class="logo-container">
     <div class="row mx-0 justify-content-end">
-      <div class="col-auto px-0 logo-col">
+      <a [routerLink]="'/'" class="col-auto px-0 logo-col">
         <img src="../../assets/logo.jpg" alt="Blow House Logo" class="logo">
-      </div>
+      </a>
     </div>
   </div>
 </div>
 <div class="row mx-0 header-row">
   <div class="triangle"></div>
-  <a *ngIf="!isHome" [routerLink]="'/'" class="col-auto">logo goes here</a>
-  <div *ngIf="!isHome" class="col px-0">
+  <div *ngIf="!isHome" class="header-text-wrap col px-0">
     <app-header-text></app-header-text>
   </div>
 </div>

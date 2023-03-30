@@ -1,7 +1,8 @@
-<div class="row mx-0 justify-content-end">
-  <a [routerLink]="'/events'" class="col-auto">Events</a>
-  <a [routerLink]="'/media'" class="col-auto">Social Media</a>
-  <a [routerLink]="'/contact'" class="col-auto">Contact</a>
-  <a href="https://forms.gle/JuEy3aPKBddcRBGVA" target="_blank" class="col-auto">Store</a>
+<div class="row mx-0 justify-content-center">
+  <!-- <a [routerLink]="'/events'" class="col-auto">Events</a>
+  <a [routerLink]="'/media'" class="col-auto">Social Media</a> -->
+  <a *ngIf="this.currentUrl !== '/'" [routerLink]="'/'" [ngClass]="{'active-link': this.currentUrl === '/', 'home-font': this.currentUrl === '/'}" class="col-auto">Home</a>
+  <a [routerLink]="'/contact'" [ngClass]="{'active-link': this.currentUrl === '/contact', 'home-font': this.currentUrl === '/'}" class="col-auto">Contact</a>
+  <a href="https://forms.gle/JuEy3aPKBddcRBGVA" target="_blank" class="col-auto" [ngClass]="{'active-link': this.currentUrl === '/store', 'home-font': this.currentUrl === '/'}">Store</a>
   <!--<a [routerLink]="'/store'" class="col-auto">Store</a>-->
 </div>
