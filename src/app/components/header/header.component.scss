@@ -1,0 +1,32 @@
+.image-container {
+  width: 100%;
+
+  .logo-container {
+    position: absolute;
+    top: 2rem;
+    width: 100%;
+    padding-right: 2rem;
+
+    .logo-col {
+      width: 17%;
+    }
+
+    .logo {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+}
+
+.header-row {
+  position: relative;
+
+  .triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 10vw solid #000000;
+    border-right: 100vw solid transparent;
+    margin-top: -9.8vw;
+  }
+}

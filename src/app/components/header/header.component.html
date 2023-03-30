@@ -1,12 +1,23 @@
-<div *ngIf="!isHome" class="row mx-0">
-    <a [routerLink]="'/'" class="col-auto">logo goes here</a>
-    <div class="col px-0">
-      <div class="row mx-0 justify-content-end">
-        <a [routerLink]="'/events'" class="col-auto">Events</a>
-        <a [routerLink]="'/media'" class="col-auto">Social Media</a>
-        <a [routerLink]="'/contact'" class="col-auto">Contact</a>
-        <a href="https://forms.gle/JuEy3aPKBddcRBGVA" target="_blank" class="col-auto">Store</a>
-        <!--<a [routerLink]="'/store'" class="col-auto">Store</a>-->
+<div class="image-container">
+  <img src="../../../assets/black-and-white-crop-4.jpeg" alt="Image Of Blow House on a Mardi Gras Parade Float" class="w-100">
+  <div class="logo-container">
+    <div class="row mx-0 justify-content-end">
+      <div class="col-auto px-0 logo-col">
+        <img src="../../assets/logo.jpg" alt="Blow House Logo" class="logo">
       </div>
     </div>
+  </div>
+</div>
+<div class="row mx-0 header-row">
+  <div class="triangle"></div>
+  <a *ngIf="!isHome" [routerLink]="'/'" class="col-auto">logo goes here</a>
+  <div *ngIf="!isHome" class="col px-0">
+    <div class="row mx-0 justify-content-end">
+      <a [routerLink]="'/events'" class="col-auto">Events</a>
+      <a [routerLink]="'/media'" class="col-auto">Social Media</a>
+      <a [routerLink]="'/contact'" class="col-auto">Contact</a>
+      <a href="https://forms.gle/JuEy3aPKBddcRBGVA" target="_blank" class="col-auto">Store</a>
+      <!--<a [routerLink]="'/store'" class="col-auto">Store</a>-->
+    </div>
+  </div>
 </div>

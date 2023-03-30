@@ -1,26 +1,6 @@
 @import "/src/app/variables.scss";
 @import "/src/styles.scss";
 
-.image-container {
-  width: 100%;
-
-  .logo-container {
-    position: absolute;
-    top: 2rem;
-    width: 100%;
-    padding-right: 2rem;
-
-    .logo-col {
-      width: 17%;
-    }
-
-    .logo {
-      width: 100%;
-      border-radius: 50%;
-    }
-  }
-}
-
 .menu {
   text-align: center;
 
@@ -46,19 +26,9 @@
   color: $text-color;
   background-color: $bg-color;
 
-  .triangle {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-bottom: 10vw solid #000000;
-    border-right: 100vw solid transparent;
-    margin-top: -9.8vw;
-  }
-
   .text-block {
     width: 100%;
     height: 100%;
-    margin-top: -15px;
 
     .title {
       margin-top: -10px;
