@@ -15,6 +15,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { StoreComponent } from './pages/store/store.component';
 import { _globals } from './models/common';
 import { HeaderTextComponent } from './components/header-text/header-text.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HeaderTextComponent } from './components/header-text/header-text.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     StoreModule.forRoot(ROOT_REDUCER,
       {
         runtimeChecks: {

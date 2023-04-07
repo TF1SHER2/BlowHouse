@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
+import { Video } from 'src/app/models/youtube.models';
 import { setContainerTypeAction } from 'src/app/ngrx/actions/global.actions';
 import { AppState } from 'src/app/ngrx/app.state';
+import { YoutubeService } from 'src/app/services/youtube.service';
 
 @Component({
   selector: 'app-media',
@@ -10,10 +13,22 @@ import { AppState } from 'src/app/ngrx/app.state';
 })
 export class MediaComponent implements OnInit {
 
-  constructor(private store: Store<AppState>) { }
+  videos: Video[] = [];
+
+  constructor(private store: Store<AppState>,
+              private youtubeService: YoutubeService,
+              private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.store.dispatch(setContainerTypeAction({ containerType: 'normal' }));
+
+    this.youtubeService.getPlayList('PLjv-8DmGH7xepShhoDKfMS9fibDL0nrNQ', '5').subscribe((results) => {
+      this.videos = results.videos;
+    });
+  }
+
+  getSafeUrl(url: string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
 }
