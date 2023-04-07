@@ -23,7 +23,6 @@ export class YoutubeService {
     return this.http.get(this.getURL(id, pageSize, pageToken))
       .pipe(
         map((res: any) => {
-          console.log(res);
           return {
             id: id,
             total: res.pageInfo.totalResults,

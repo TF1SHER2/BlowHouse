@@ -52,7 +52,6 @@ export class AppComponent implements OnInit, OnDestroy {
         } else {
           this.screenWidth = 'xs';
         }
-        console.log(this.screenWidth);
         this.store.dispatch(setScreenWidthAction({ screenWidth: this.screenWidth }));
       })
     );

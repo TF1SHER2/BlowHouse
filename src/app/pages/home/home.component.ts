@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.store.dispatch(setContainerTypeAction({ containerType: 'normal' }));
     if (this.authService.isAuthenticated()) {
       this.subs.push(this.authService.getUserPermissions().subscribe((permissions) => {
-        console.log(permissions);
+        // console.log(permissions);
       }));
     }
   }
