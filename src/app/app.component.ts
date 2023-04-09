@@ -59,7 +59,7 @@ export class AppComponent implements OnInit, OnDestroy {
     // example of how to subscribe to global screen width in other components
     this.subs.push(this.store.select(selectScreenWidth)
       .subscribe((screenWidth: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | undefined) => {
-        console.log(screenWidth);
+        // console.log(screenWidth);
       })
     );
   }

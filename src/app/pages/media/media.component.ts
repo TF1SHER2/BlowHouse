@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { DomSanitizer, SafeHtml, SafeResourceUrl } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
 import { PageDirection, PlayList, Video } from 'src/app/models/youtube.models';
 import { setContainerTypeAction } from 'src/app/ngrx/actions/global.actions';
@@ -64,7 +64,6 @@ export class MediaComponent implements OnInit, OnDestroy {
       url: this.videoUrls[this.activeVideoIndex],
     }
     this.playList = playList;
-    console.log(playList);
   }
 
   getSafeUrl(url: string) {
@@ -72,14 +71,18 @@ export class MediaComponent implements OnInit, OnDestroy {
   }
 
   onThumbClick(i: number) {
-    console.log(i);
     this.activeVideoIndex = i;
     this.activeVideo = {
       title: this.videos[i].title,
       description: this.videos[i].description,
       url: this.videoUrls[i],
     };
+    this.scrollToTop();
   }
+
+  scrollToTop() {
+    window.scrollTo(0,0);
+}
 
   ngOnDestroy(): void {
     for (let sub of this.subs) {
