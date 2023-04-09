@@ -67,6 +67,16 @@
     position: relative;
     display: inline-block;
 
+    .thumb-image {
+      @media(min-width: map-get($grid-breakpoints , "md" )) {
+        padding: 0 .5rem;
+      }
+
+      @media(min-width: map-get($grid-breakpoints , "lg" )) {
+        padding: 0;
+      }
+    }
+
     .fa-youtube {
       position: absolute;
       font-size: 3rem;

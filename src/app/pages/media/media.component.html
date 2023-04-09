@@ -31,7 +31,7 @@
     <div *ngFor="let video of videos; let i = index;" (click)="onThumbClick(i)" class="video-thumb">
       <ng-container *ngIf="video.title !== activeVideo.title">
         <span class="fa-brands fa-youtube"></span>
-        <img [src]="video.imgURL" [alt]="video.title">
+        <img class="thumb-image" [src]="video.imgURL" [alt]="video.title">
         <div class="thumb-title">{{ video.title }}</div>
       </ng-container>
     </div>
