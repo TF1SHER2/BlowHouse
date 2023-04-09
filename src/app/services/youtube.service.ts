@@ -11,12 +11,13 @@ import { PageDirection, PlayList, Video } from '../models/youtube.models';
 export class YoutubeService {
 
   private YOUTUBE_TOKEN = 'AIzaSyCK-amES1535cPZM7E9X4yzkas3zcR4Y-4';
+  maxPageSize = '50';
 
   constructor(public http: HttpClient) { }
 
   private getURL(id: string, pageSize?: string, pageToken?: string): string {
     return 'https://www.googleapis.com/youtube/v3/playlistItems?pageToken=' + (pageToken != null ? pageToken : '')
-      + '&part=snippet%2CcontentDetails%2Cstatus&playlistId=' + id + '&key=' + this.YOUTUBE_TOKEN + '&maxResults=' + (pageSize != null ? pageSize : '50');
+      + '&part=snippet%2CcontentDetails%2Cstatus&playlistId=' + id + '&key=' + this.YOUTUBE_TOKEN + '&maxResults=' + (pageSize != null ? pageSize : this.maxPageSize);
   }
 
   private requestPlayList(id: string, pageSize?: string, pageToken?: string): Observable<PlayList> {
@@ -48,13 +49,13 @@ export class YoutubeService {
     return this.requestPlayList(id, pageSize);
   }
 
-  movePage(playlist: PlayList, direction: PageDirection): Observable<PlayList> {
+  movePage(playlist: PlayList, direction: PageDirection, pageSize?: string): Observable<PlayList> {
     let pageToken = '';
     if (direction === PageDirection.NEXT) {
       pageToken = playlist.nextPageToken;
     } else if (direction === PageDirection.PREVIOUS) {
       pageToken = playlist.prevPageToken;
     }
-    return this.requestPlayList(playlist.id, pageToken);
+    return this.requestPlayList(playlist.id, (pageSize != null ? pageSize : this.maxPageSize), pageToken);
   }
 }

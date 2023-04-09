@@ -1,10 +1,42 @@
 <div class="row mx-0 pt-5">
-  <div class="col-12 col-lg-4 text-center spotify-wrap">
+  <div class="col-12 col-xl-3 text-center spotify-wrap">
     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5eFDkvvIjHSaKorew9SD1E?utm_source=generator&theme=0" width="100%" height="100%" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
-  <div class="col-12 col-lg-8">
-    <div *ngFor="let video of videos; let i = index;" class="video-wrap">
-      <iframe width="100%" height="100%" [src]="this.videoUrls[i]" [title]="video.title" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+  <div class="col-12 col-lg-8 col-xl-7 video-col">
+    <div class="video-wrap">
+      <iframe width="100%" height="100%" [src]="activeVideo.url" [title]="activeVideo.title" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+    </div>
+    <div class="title">
+      {{ activeVideo.title }}
+    </div>
+    <div class="description">
+      {{ activeVideo.description }}
+    </div>
+    <div class="w-100 text-center pb-3">
+      <a href="https://www.facebook.com/BlowHouseBrassBand" target="_blank">
+        <span class="fa-brands fa-facebook-f icon"></span>
+      </a>&nbsp; &nbsp;
+      <a href="https://mobile.twitter.com/blowhousebrass" target="_blank">
+        <span class="fa-brands fa-twitter icon"></span>
+      </a>&nbsp; &nbsp;
+      <a href="https://www.instagram.com/blow_house/" target="_blank">
+        <span class="fa-brands fa-instagram icon"></span>
+      </a>&nbsp; &nbsp; &nbsp;
+      <a href="https://www.youtube.com/channel/UCISLzojZEfh7QL7L2FdSqWg" target="_blank">
+        <span class="fa-brands fa-youtube icon"></span>
+      </a>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4 col-xl-2 thumbnail-col">
+    <div *ngFor="let video of videos; let i = index;" (click)="onThumbClick(i)" class="video-thumb">
+      <ng-container *ngIf="video.title !== activeVideo.title">
+        <span class="fa-brands fa-youtube"></span>
+        <img [src]="video.imgURL" [alt]="video.title">
+        <div class="thumb-title">{{ video.title }}</div>
+      </ng-container>
+    </div>
+    <div *ngIf="showLoadMore" class="load-more" (click)="onLoadMore()">
+      Load More
     </div>
   </div>
 </div>

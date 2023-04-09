@@ -3,31 +3,113 @@
 
 .spotify-wrap {
   height: 156px;
+  margin-bottom: 3rem;
 
-  @media(min-width: map-get($grid-breakpoints , "lg" )) {
+  @media(min-width: map-get($grid-breakpoints , "xl" )) {
     height: 56vh;
   }
 }
 
-.video-wrap {
-  height: 225px;
-  padding-top: 2rem;
+.video-col {
+  .video-wrap {
+    height: 225px;
+    // padding-top: 2rem;
 
-  @media(min-width: map-get($grid-breakpoints , "sm" )) {
-    height: 300px;
+    @media(min-width: map-get($grid-breakpoints , "sm" )) {
+      height: 300px;
+    }
+
+    @media(min-width: map-get($grid-breakpoints , "md" )) {
+      height: 400px;
+    }
+
+    @media(min-width: map-get($grid-breakpoints , "lg" )) {
+      height: 500px;
+      // padding-top: 0;
+      padding-bottom: 1.5rem;
+    }
+
+    @media(min-width: map-get($grid-breakpoints , "xl" )) {
+      height: 500px;
+    }
   }
 
-  @media(min-width: map-get($grid-breakpoints , "md" )) {
-    height: 400px;
+  .title {
+    font-size: 1.5rem;
   }
 
-  @media(min-width: map-get($grid-breakpoints , "lg" )) {
-    height: 500px;
-    padding-top: 0;
-    padding-bottom: 1.5rem;
+  .description {
+    padding-top: .5rem;
   }
 
-  @media(min-width: map-get($grid-breakpoints , "xl" )) {
-    height: 500px;
+  .icon {
+    margin-top: 1rem;
+    font-size: 50px;
+    object-fit: cover;
+    padding: 0 1rem;
+    color: white;
+
+    @media(max-width: map-get($grid-breakpoints , "sm" )) {
+      font-size: 30px;
+      padding: 0 .75rem;
+    }
+
+    &:hover {
+      color: $blow-house-red;
+    }
+  }
+}
+
+.thumbnail-col {
+  text-align: center;
+
+  .video-thumb {
+    position: relative;
+    display: inline-block;
+
+    .fa-youtube {
+      position: absolute;
+      font-size: 3rem;
+      top: 75px;
+      left: 133px;
+      opacity: .75;
+    }
+
+    .thumb-title {
+      padding-top: .5rem;
+      font-size: .875rem;
+      padding-bottom: 1.5rem;
+      text-align: center;
+
+      @media(min-width: map-get($grid-breakpoints , "lg" )) {
+        text-align: left;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .fa-youtube {
+        color: $blow-house-red;
+      }
+
+      .thumb-title {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .load-more {
+    margin: 0 0 1rem 0;
+    text-align: center;
+
+    @media(min-width: map-get($grid-breakpoints , "lg" )) {
+      text-align: left;
+    }
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
 }
