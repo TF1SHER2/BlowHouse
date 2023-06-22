@@ -6,9 +6,19 @@
 
   @media(max-width: map-get($grid-breakpoints , "sm" )) {
     font-size: 1.25rem;
-  }
+
+
 }
 
+.email-link {text-decoration: none;
+  color: white;
+
+  &:hover {
+    color: $blow-house-red;
+  }
+
+   }
+}
 
 .icon {
   color: white;
@@ -23,4 +33,6 @@
   &:hover {
     color: $blow-house-red;
   }
+
+  
 }

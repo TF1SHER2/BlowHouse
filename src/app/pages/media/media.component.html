@@ -12,20 +12,6 @@
     <div class="description">
       {{ activeVideo.description }}
     </div>
-    <div class="w-100 text-center pb-3">
-      <a href="https://www.facebook.com/BlowHouseBrassBand" target="_blank">
-        <span class="fa-brands fa-facebook-f icon"></span>
-      </a>&nbsp; &nbsp;
-      <a href="https://mobile.twitter.com/blowhousebrass" target="_blank">
-        <span class="fa-brands fa-twitter icon"></span>
-      </a>&nbsp; &nbsp;
-      <a href="https://www.instagram.com/blow_house/" target="_blank">
-        <span class="fa-brands fa-instagram icon"></span>
-      </a>&nbsp; &nbsp; &nbsp;
-      <a href="https://www.youtube.com/channel/UCISLzojZEfh7QL7L2FdSqWg" target="_blank">
-        <span class="fa-brands fa-youtube icon"></span>
-      </a>
-    </div>
   </div>
   <div class="col-12 col-lg-4 col-xl-2 thumbnail-col">
     <div *ngFor="let video of videos; let i = index;" (click)="onThumbClick(i)" class="video-thumb">
@@ -39,4 +25,24 @@
       Load More
     </div>
   </div>
+  <br><br><br><br>
+  <div class="w-100 text-center video-col pb-3">
+    <a href="https://www.facebook.com/BlowHouseBrassBand" target="_blank">
+      <span class="fa-brands fa-facebook-f icon"></span>
+    </a>&nbsp; &nbsp;
+    <a href="https://mobile.twitter.com/blowhousebrass" target="_blank">
+      <span class="fa-brands fa-twitter icon"></span>
+    </a>&nbsp; &nbsp;
+    <a href="https://www.instagram.com/blow_house/" target="_blank">
+      <span class="fa-brands fa-instagram icon"></span>
+    </a>&nbsp; &nbsp; &nbsp;
+    <a href="https://www.youtube.com/channel/UCISLzojZEfh7QL7L2FdSqWg" target="_blank">
+      <span class="fa-brands fa-youtube icon"></span>
+    </a>
+    <div class="col-12 text-center">
+      <br><b>BLOW HOUSE BRASS BAND  | </b>
+      <i>Mobile, AL</i>
+    </div>
+  </div>
 </div>
+
