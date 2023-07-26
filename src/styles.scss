@@ -6,6 +6,17 @@
 @import "~@fortawesome/fontawesome-free/scss/regular";
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
+@font-face{
+  font-family: Anton;
+  src: url('./assets/fonts/Anton-Regular.ttf') format('truetype');
+  font-weight: regular;
+}
+@font-face{
+  font-family: CloisterBlack;
+  src: url('./assets/fonts/CloisterBlack.ttf') format('truetype');
+  font-weight: regular;
+}
+
 body {
   overflow-y: auto;
   overflow-x: hidden;
@@ -21,9 +32,4 @@ body {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
-}
-
-@font-face{
-  font-family:Anton;
-  src: url('/src/assets/fonts/Anton-Regular.ttf');
 }
