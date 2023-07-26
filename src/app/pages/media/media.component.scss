@@ -85,10 +85,20 @@
       top: 75px;
       left: 133px;
       opacity: .75;
+
+      @media(min-width: map-get($grid-breakpoints , "xl" )) {
+        top: 52px;
+        left: 105px;
+      }
+
+      @media(min-width: map-get($grid-breakpoints , "xxl" )) {
+        top: 75px;
+        left: 133px;
+      }
     }
 
     .thumb-title {
-      padding-top: .5rem;
+      padding-top: .25rem;
       font-size: .875rem;
       padding-bottom: 1.5rem;
       text-align: center;
