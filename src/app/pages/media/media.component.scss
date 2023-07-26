@@ -42,7 +42,24 @@
     padding-top: .5rem;
   }
 
-  
+  .icon {
+    margin-top: 1rem;
+    font-size: 50px;
+    object-fit: cover;
+    padding: 0 1rem;
+    color: white;
+
+    @media(max-width: map-get($grid-breakpoints , "sm" )) {
+      font-size: 30px;
+      padding: 0 .75rem;
+    }
+
+    &:hover {
+      color: $blow-house-red;
+    }
+  }
+}
+
 
 .thumbnail-col {
   text-align: center;
@@ -52,6 +69,7 @@
     display: inline-block;
 
     .thumb-image {
+      max-width: 100%;
       @media(min-width: map-get($grid-breakpoints , "md" )) {
         padding: 0 .5rem;
       }
@@ -106,5 +124,4 @@
       text-decoration: underline;
     }
   }
-}
 }
