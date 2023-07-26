@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EventsComponent } from './pages/events/events.component';
 import { HeaderComponent } from './components/header/header.component';
+import {FooterComponent } from './components/footer/footer.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
@@ -23,6 +24,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HomeComponent,
     EventsComponent,
     HeaderComponent,
+    FooterComponent,
     MediaComponent,
     ContactComponent,
     StoreComponent,
