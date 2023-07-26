@@ -22,6 +22,15 @@ export class MediaComponent implements OnInit, OnDestroy {
   activeVideoIndex = 0;
   pageSize: string = '4';
   showLoadMore = true;
+  descriptionTextFilters = [
+    'Facebook',
+    'https://www.facebook.com/BlowHouseBrassBand',
+    'Twitter',
+    'https://www.twitter.com/BlowHouseBrass',
+    'Instagram',
+    'https://www.instagram.com/blow_house',
+    '►',
+  ];
 
   constructor(private store: Store<AppState>,
               private youtubeService: YoutubeService,
@@ -41,6 +50,16 @@ export class MediaComponent implements OnInit, OnDestroy {
         this.addVideosFromPlayList(playList, 'concat');
       }));
     }
+  }
+
+  calculateVideoDescription(description: string): string {
+    for (let filter of this.descriptionTextFilters) {
+      do {
+        description = description.replace(filter, '');
+      } while (description.includes(filter));
+    }
+    description = description.trim();
+    return description;
   }
 
   addVideosFromPlayList(playList: PlayList, action: 'init' | 'concat') {

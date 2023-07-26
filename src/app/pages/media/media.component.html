@@ -10,7 +10,7 @@
       {{ activeVideo.title }}
     </div>
     <div class="description">
-      {{ activeVideo.description }}
+      {{ calculateVideoDescription(activeVideo.description || '') }}
     </div>
   </div>
   <div class="col-12 col-lg-4 col-xl-3 thumbnail-col">
