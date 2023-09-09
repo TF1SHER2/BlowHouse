@@ -1,22 +1,28 @@
-<div class="w-100 text-center pb-3">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="w-100 text-center pb-2">
     <a href="https://www.facebook.com/BlowHouseBrassBand" target="_blank">
       <span class="fa-brands fa-facebook-f icon"></span>
-    </a>&nbsp; &nbsp;
+    </a>&nbsp; 
     <a href="https://mobile.twitter.com/blowhousebrass" target="_blank">
-      <span class="fa-brands fa-twitter icon"></span>
-    </a>&nbsp; &nbsp;
+      <span class="fa-brands fa-x-twitter icon"></span>
+    </a>&nbsp;
     <a href="https://www.instagram.com/blow_house/" target="_blank">
       <span class="fa-brands fa-instagram icon"></span>
-    </a>&nbsp; &nbsp; &nbsp;
+    </a>&nbsp; 
     <a href="https://www.youtube.com/channel/UCISLzojZEfh7QL7L2FdSqWg" target="_blank">
       <span class="fa-brands fa-youtube icon"></span>
-    </a>&nbsp; &nbsp; &nbsp;
+    </a>&nbsp; 
     <a href="https://open.spotify.com/artist/5eFDkvvIjHSaKorew9SD1E" target="_blank">
       <span class="fa-brands fa-spotify icon"></span>
     </a>
   </div>
   <div class="col-12 text-center">
-    <br><b>BLOW HOUSE BRASS BAND  | </b>
-    <i>Mobile, AL</i>
+    <br><a [routerLink]="'/'" [ngClass]="{'active-link': this.currentUrl === '/'}" class="col-auto">
+      <b>BLOW HOUSE BRASS BAND</b>
+    </a>
+    <span>   |  </span>
+    <a href="https://www.mobile.org/" target="_blank">
+      <i>Mobile, AL</i>
+    </a>
   </div>
   <br>

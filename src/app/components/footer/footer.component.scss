@@ -16,3 +16,13 @@
       color: $blow-house-red;
     }
   }
+
+  a {
+    text-decoration: none;
+    color: lightgray;
+    font-family: Anton,sans-serif;
+    
+    &:hover {
+      color: $blow-house-red;
+    }
+  }
