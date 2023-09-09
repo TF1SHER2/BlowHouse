@@ -14,6 +14,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { MediaComponent } from './pages/media/media.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { StoreComponent } from './pages/store/store.component';
+import { EPKComponent } from './pages/epk/epk.component';
 import { _globals } from './models/common';
 import { HeaderTextComponent } from './components/header-text/header-text.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -29,6 +30,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ContactComponent,
     StoreComponent,
     HeaderTextComponent,
+    EPKComponent,
   ],
   imports: [
     BrowserModule,

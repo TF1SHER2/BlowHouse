@@ -1,0 +1,86 @@
+@import "/src/app/variables.scss";
+
+
+
+.img-container {
+  position:relative;
+  padding:90%;
+  text-align: center;
+}
+
+.inverse-logo {
+  max-width: 222px;
+}
+
+.press-header {
+  font-family: CLoisterBlack;
+  color: goldenrod;
+  font-size: 2rem;
+
+  @media(min-width: map-get($grid-breakpoints , "sm" )) {
+    font-size: 2.75rem;
+  }
+  @media(min-width: map-get($grid-breakpoints , "md" )) {
+    font-size: 3.75rem;
+  }
+  @media(min-width: map-get($grid-breakpoints , "lg" )) {
+    font-size: 4.75rem;
+  }
+  @media(min-width: map-get($grid-breakpoints , "xxl" )) {
+    font-size: 7rem;
+  }
+}
+
+// img {
+//     max-width: 15%;
+//     border-radius: 10px;
+// }
+a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+
+  &:hover {
+    color: $blow-house-red;
+  }
+}
+
+p {
+  font-size: 18px;
+}
+
+.center {
+    margin-right: auto;
+    margin-left: auto;
+}
+td {
+    padding: 2px;
+}
+
+.contact-photo {
+  max-width: 16rem;
+  border-radius: 6px;
+}
+
+.press-image {
+  max-width: 100%;
+  padding: .5rem;
+  border-radius: 12px;
+  padding-bottom: 2rem;
+}
+
+.icon {
+  padding-right: .5rem;
+}
+
+.promo-link {
+  color: $blow-house-red;
+}
+
+.media-link a {
+  text-decoration:underline;
+
+  &:hover {
+  text-decoration-color: $blow-house-red;
+  }
+}
