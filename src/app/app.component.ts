@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { AppBreakpoints, AppState, selectContainerType, selectScreenWidth } from './ngrx/app.state';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { ScreenWidth } from './models/screenWidth';
 
 @Component({
   selector: 'app-root',
@@ -17,11 +18,11 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'BlowHouse';
   subs: Subscription[] = [];
   containerType: 'normal' | 'fluid' = 'normal';
-  screenWidth: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | undefined;
+  screenWidth: ScreenWidth | undefined;
 
   constructor(private store: Store<AppState>,
-              private cd: ChangeDetectorRef,
-              private breakpointObserver: BreakpointObserver) { }
+    private cd: ChangeDetectorRef,
+    private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
     this.subs.push(this.store.select(selectContainerType)
@@ -33,35 +34,38 @@ export class AppComponent implements OnInit, OnDestroy {
       })
     );
 
+    let breakpoints = [
+      AppBreakpoints.xxl,
+      AppBreakpoints.xl,
+      AppBreakpoints.lg,
+      AppBreakpoints.md,
+      AppBreakpoints.sm,
+      AppBreakpoints.xs
+    ];
+
     // this updates both this.screenWidth for app.component locally,
     // and the global screenWidth attribute for other components
-    this.subs.push(this.breakpointObserver.observe([
-      `(min-width: ${AppBreakpoints.xl}px)`,
-      `(min-width: ${AppBreakpoints.lg}px)`,
-      `(min-width: ${AppBreakpoints.md}px)`,
-      `(min-width: ${AppBreakpoints.sm}px)`])
+    this.subs.push(this.breakpointObserver.observe(
+      breakpoints.map(m => this.generateBreakpointString(m)))
       .subscribe((state: BreakpointState) => {
-        if(state.breakpoints[`(min-width: ${AppBreakpoints.xl}px)`]) {
-          this.screenWidth = 'xl';
-        } else if (state.breakpoints[`(min-width: ${AppBreakpoints.lg}px)`]) {
-          this.screenWidth = 'lg';
-        } else if (state.breakpoints[`(min-width: ${AppBreakpoints.md}px)`]) {
-          this.screenWidth = 'md';
-        } else if (state.breakpoints[`(min-width: ${AppBreakpoints.sm}px)`]) {
-          this.screenWidth = 'sm';
-        } else {
-          this.screenWidth = 'xs';
-        }
-        this.store.dispatch(setScreenWidthAction({ screenWidth: this.screenWidth }));
-      })
-    );
+        this.store.dispatch(
+          setScreenWidthAction({
+            screenWidth: (breakpoints.find(m =>
+              state.breakpoints[this.generateBreakpointString(m)])  ?? 'xs').toString() as ScreenWidth
+            })
+        );
+      }));
 
     // example of how to subscribe to global screen width in other components
     this.subs.push(this.store.select(selectScreenWidth)
-      .subscribe((screenWidth: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | undefined) => {
-        // console.log(screenWidth);
+      .subscribe((screenWidth: ScreenWidth | undefined) => {
+        this.screenWidth = screenWidth;
       })
     );
+  }
+
+  private generateBreakpointString(breakpoint: AppBreakpoints): string {
+    return `(min-width: ${breakpoint}px`;
   }
 
   ngOnDestroy(): void {

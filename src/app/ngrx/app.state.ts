@@ -3,17 +3,19 @@ import { getSelectors, routerReducer } from "@ngrx/router-store";
 import * as fromRouter from '@ngrx/router-store';
 import { globalReducer } from "./reducers/global.reducer";
 import { createFeatureSelector, State } from "@ngrx/store";
+import { ScreenWidth } from "../models/screenWidth";
 
 export enum AppBreakpoints {
   xs = 0,
   sm = 576,
   md = 768,
   lg = 991,
-  xl = 1200
+  xl = 1200,
+  xxl = 1600
 }
 
 export interface GlobalState {
-  screenWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl',
+  screenWidth?: ScreenWidth,
   containerType?: 'normal' | 'fluid'
 }
 
