@@ -34,27 +34,31 @@ export class AppComponent implements OnInit, OnDestroy {
       })
     );
 
-    let breakpoints = [
-      AppBreakpoints.xxl,
-      AppBreakpoints.xl,
-      AppBreakpoints.lg,
-      AppBreakpoints.md,
-      AppBreakpoints.sm,
-      AppBreakpoints.xs
-    ];
+    let breakpointsMap = new Map<AppBreakpoints, string>([
+      [AppBreakpoints.xxl, "xxl"],
+      [AppBreakpoints.xl, "xl"],
+      [AppBreakpoints.lg, "lg"],
+      [AppBreakpoints.md, "md"],
+      [AppBreakpoints.sm, "sm"],
+      [AppBreakpoints.xs, "xs"]
+    ]);
+
+    let breakpoints = Array.from(breakpointsMap.keys());
 
     // this updates both this.screenWidth for app.component locally,
     // and the global screenWidth attribute for other components
-    this.subs.push(this.breakpointObserver.observe(
+    this.subs.push(
+      this.breakpointObserver.observe(
       breakpoints.map(m => this.generateBreakpointString(m)))
       .subscribe((state: BreakpointState) => {
         this.store.dispatch(
           setScreenWidthAction({
-            screenWidth: (breakpoints.find(m =>
-              state.breakpoints[this.generateBreakpointString(m)])  ?? 'xs').toString() as ScreenWidth
+            screenWidth: breakpointsMap.get(breakpoints.find(m =>
+              state.breakpoints[this.generateBreakpointString(m)]) ?? 0) as ScreenWidth
             })
         );
-      }));
+      })
+    );
 
     // example of how to subscribe to global screen width in other components
     this.subs.push(this.store.select(selectScreenWidth)
@@ -66,6 +70,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private generateBreakpointString(breakpoint: AppBreakpoints): string {
     return `(min-width: ${breakpoint}px`;
+  }
+
+  isContainerNormal() {
+    return this.containerType === 'normal';
   }
 
   ngOnDestroy(): void {
