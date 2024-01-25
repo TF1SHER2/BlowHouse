@@ -2,8 +2,49 @@ $bg-color: #000000;
 $text-color: white;
 $dark-accent: #141414;
 $blow-house-red: #FE000C;
-$accent-color: white;
 
+// $primary-color: $blow-house-red;
+// $accent-color: white;
+// $tertiary-color: #353132;
+// $quaternary-color: lightgray;
+
+$primary-color: purple;
+$accent-color: gold;
+$tertiary-color: #353132;
+$quaternary-color: lightgray;
+
+h1, h2, h3 {
+  font-family: Anton, sans-serif;
+}
+
+.primary-color {
+  color: $primary-color;
+}
+
+.accent-color {
+  color: $accent-color;
+}
+
+.tertiary-color {
+  color: $tertiary-color;
+}
+
+.quaternary-color {
+  color: $quaternary-color;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  font-weight: 600;
+
+  &:hover {
+    background-color: $accent-color;
+    border-color: $accent-color;
+    color: $accent-color;
+    color: black;
+  }
+}
 
 $grid-breakpoints: (
   xs: 0,

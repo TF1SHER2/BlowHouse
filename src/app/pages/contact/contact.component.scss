@@ -6,37 +6,17 @@
 
   @media(max-width: map-get($grid-breakpoints , "sm" )) {
     font-size: 1.25rem;
-
-
-}
-}
-
-.email-link a{
-  text-decoration: none;
-  color: darkgray;
-  font: bold;
-
-  &:hover {
-    color: $blow-house-red;
-    background-color: #353132;
-    border-radius: 5px;
   }
-
-  &:visited{
-    color: white;
-  }
- }
+}
 
 .img-container {
-    position:relative;
-    padding:90%;
-    text-align: center;
+  position:relative;
+  padding:90%;
+  text-align: center;
 }
 
 img {
-    max-width: 40%;  
-    border-radius: 10px;
-
-  
+  max-width: 40%;
+  border-radius: 10px;
 }
 

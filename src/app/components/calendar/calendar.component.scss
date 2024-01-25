@@ -1,0 +1,45 @@
+@import "/src/app/variables.scss";
+
+.event-item {
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: $tertiary-color;
+
+  // &.off-gray {
+  //   background-color: darkgrey;
+  // }
+  .event-item-row {
+    align-items: center;
+
+    .date-col {
+      min-width: 130px;
+
+      @media(max-width: map-get($grid-breakpoints , "lg" )) {
+        width: 100%;
+      }
+    }
+
+    .time-col {
+      min-width: 165px;
+
+      @media(max-width: map-get($grid-breakpoints , "lg" )) {
+        width: 100%;
+      }
+    }
+    .summary-text {
+      font-weight: bold;
+    }
+
+    .button-col {
+      width: 25%;
+      max-width: 250px;
+
+      @media(max-width: map-get($grid-breakpoints , "lg" )) {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+

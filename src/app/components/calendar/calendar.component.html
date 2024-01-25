@@ -1,0 +1,35 @@
+<div class="row">
+  <h2 class="col-12 pt-5">Upcoming Events</h2>
+  <div class="col-12">
+    <div *ngFor="let event of eventItems; let i = index;" [ngClass]="{'off-gray': i % 2 == 0}" class="event-item">
+      <div class="row event-item-row mx-0">
+        <div class="col-auto px-0">
+          <div class="row mx-0">
+            <div class="col-12 d-flex d-lg-none px-0 summary-text">
+              {{ event.summary }}
+            </div>
+            <div class="col-auto date-col px-0">
+              {{ event.start.dateTime | date: 'mediumDate' }}
+            </div>
+            <div class="col-auto time-col px-0">
+              {{ event.start.dateTime | date: 'shortTime' }} -
+              {{ event.end.dateTime | date: 'shortTime' }}
+            </div>
+          </div>
+        </div>
+        <div class="col d-none d-lg-flex summary-text">
+          {{ event.summary }}
+        </div>
+        <div class="col-auto button-col px-0">
+          <a target="_blank" [href]="event.htmlLink" class="w-100 btn btn-primary">Add to Calendar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showLoadMore" class="col-12">
+    <a class="theme-link" (click)="loadMore()">Load more</a>
+  </div>
+</div>
+<!-- <div class="text-center" style="padding: 2%">
+  <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&mode=AGENDA&showCalendars=0&showPrint=0&showDate=1&showTitle=0&showNav=0&showTabs=0&showTz=1&src=MmNiOTQ5M2Q2NGQyNzNkMTVlY2I5ZjI5MzVjOWFmYWFiOGRhMDZkNDk1ZmFiZTYyZDVkYjcyOTdmNTEyZjVkOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23AD1457" style="border:solid 1px #777" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+</div> -->

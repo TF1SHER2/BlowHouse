@@ -33,3 +33,18 @@ body {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
+
+.theme-link {
+  text-decoration: none;
+  padding: 0.125rem 0.25rem;
+  color: $quaternary-color;
+  font: bold;
+
+  &:hover {
+    // color: $primary-color;
+    color: $quaternary-color;
+    background-color: $tertiary-color;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+ }

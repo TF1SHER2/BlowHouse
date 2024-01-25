@@ -32,13 +32,23 @@ export class AuthenticationService {
   }
 
   public getUserPermissions():Observable<string[]> {
-    if (this.isAuthenticated()) {
-      return this.getClaims().pipe(take(1), switchMap((claims) => {
-        return of(claims['permissions'] as string[]);
-      }));
-    } else {
-      return of([]);
-    }
+    return this.isAuthenticated().pipe(
+      switchMap((isAuthenticated: boolean) => {
+        if (isAuthenticated) {
+          return this.getClaims();
+        } else {
+          return of(null);
+        }
+      }),
+      take(1),
+      switchMap((claims) => {
+        if (claims) {
+          return of(claims['permissions'] as string[]);
+        } else {
+          return of([]);
+        }
+      })
+    );
   }
 
   public getUser(): Observable<User | null | undefined> {

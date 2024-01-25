@@ -16,9 +16,9 @@ export class MediaComponent implements OnInit, OnDestroy {
 
   subs = new Array<Subscription>();
   videos: Video[] = [];
-  videoUrls: SafeResourceUrl[] = [];
+  videoUrls: string[] = [];
   playList: PlayList | undefined = undefined;
-  activeVideo: { title?: string, description?: string, url?: SafeResourceUrl } = {};
+  activeVideo: { title?: string, description?: string, url: string } = { url: '' };
   activeVideoIndex = 0;
   pageSize: string = '4';
   showLoadMore = true;
@@ -77,7 +77,7 @@ export class MediaComponent implements OnInit, OnDestroy {
 
     this.videoUrls = [];
     for (let video of this.videos) {
-      this.videoUrls.push(this.getSafeUrl('https://www.youtube.com/embed/' + video.id));
+      this.videoUrls.push('https://www.youtube.com/embed/' + video.id);
     }
     this.activeVideo = {
       title: this.videos[this.activeVideoIndex].title,

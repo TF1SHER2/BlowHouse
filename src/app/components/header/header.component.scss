@@ -33,11 +33,13 @@
 .header-row {
   .title {
     font-family: "CloisterBlack";
+    text-align: left;
     font-size: 8vw;
     padding-left: 2vw;
     margin-top: -3vw;
     z-index: 2;
-
+    margin-bottom: unset;
+    line-height: unset;
 
     // margin-top: -65px;
     // z-index: 2;
@@ -57,14 +59,42 @@
     //   margin-top: -25px;
     //   padding: 0 10rem 0 1rem;
     // }
-    // @media(max-width: map-get($grid-breakpoints , "sm" )) {
-    //   margin-top: -12px;
-    //   padding: 0 5rem 0 1rem;
-    // }
+    @media(max-width: map-get($grid-breakpoints , "md" )) {
+      text-align: center;
+      font-size: 9vw;
+      padding: 0;
+      margin-top: -4vw;
+    }
   }
 
   .header-text-wrap {
     margin-top: -1vw;
     z-index: 3;
+
+    a {
+      font-weight: bold;
+      font-family: Anton,sans-serif;
+      color: $primary-color;
+      text-decoration: none;
+      font-size: 2.15rem;
+
+
+      @media(max-width: map-get($grid-breakpoints , "sm" )) {
+        font-size: 1.35rem;
+      }
+
+      &:hover {
+        color: $accent-color;
+      }
+
+      &.active-link {
+        color: $accent-color;
+
+        &:hover {
+          text-decoration: none;
+          cursor: default;
+        }
+      }
+    }
   }
 }

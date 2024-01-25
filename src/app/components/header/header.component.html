@@ -10,10 +10,16 @@
   <div class="triangle"></div>
 </div>
 <div class="row mx-0 header-row">
-  <div class="col-12 title">
+  <h1 class="col-12 title">
     Blow House Brass Band
-  </div>
+  </h1>
   <div class="header-text-wrap col px-0">
-    <app-header-text></app-header-text>
+    <div class="row mx-0 justify-content-center">
+      <a [routerLink]="'/'" [ngClass]="{'active-link': this.currentUrl === '/'}" class="col-auto">Home</a>
+      <a [routerLink]="'/contact'" [ngClass]="{'active-link': this.currentUrl === '/contact'}" class="col-auto">Contact</a>
+      <a href="https://forms.gle/JuEy3aPKBddcRBGVA" target="_blank" class="col-auto" [ngClass]="{'active-link': this.currentUrl === '/store'}">Store</a>
+      <a [routerLink]="'/media'" [ngClass]="{'active-link': this.currentUrl === '/media'}" class="col-auto">Media</a>
+      <!-- <a [routerLink]="'/events'" [ngClass]="{'active-link': this.currentUrl === '/events'}" class="col-auto">Events</a> -->
+    </div>
   </div>
 </div>

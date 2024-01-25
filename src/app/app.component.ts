@@ -69,7 +69,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private generateBreakpointString(breakpoint: AppBreakpoints): string {
-    return `(min-width: ${breakpoint}px`;
+    return `(min-width: ${breakpoint}px)`;
   }
 
   isContainerNormal() {

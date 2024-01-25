@@ -20,14 +20,27 @@
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"></iframe>
           </div>
-         <!-- <div class="text-center" style="padding: 2%">
-            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&mode=AGENDA&showCalendars=0&showPrint=0&showDate=1&showTitle=0&showNav=0&showTabs=0&showTz=1&src=MmNiOTQ5M2Q2NGQyNzNkMTVlY2I5ZjI5MzVjOWFmYWFiOGRhMDZkNDk1ZmFiZTYyZDVkYjcyOTdmNTEyZjVkOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23AD1457" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+          <div class="col-12">
+            <app-calendar></app-calendar>
           </div>
-        -->
           <div class="image-container">
-            <img src="../../../assets/FNL.jpg" alt="Image Of Blow House on playing in Cathedral Square" class="w-100 text-center" width="100%">
+            <ngb-carousel>
+              <!--
+                Additional slides can be added by adding additional ng-template blocks
+                with the ngbSlide directive. You can also put an *ngFor loop on the
+                ng-template block and dynamically iterate over an array of images if needed
+               -->
+              <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                  <img src="../../../assets/FNL.jpg" alt="Image Of Blow House on playing in Cathedral Square" class="w-100 text-center" width="100%">
+                </div>
+                <!-- <div class="carousel-caption">
+                  <h3>10 seconds between slides...</h3>
+                  <p>This carousel uses customized default values.</p>
+                </div> -->
+              </ng-template>
+            </ngb-carousel>
           </div>
-        <br><br><br><br>
         </div>
       </div>
     </div>

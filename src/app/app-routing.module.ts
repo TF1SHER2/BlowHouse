@@ -6,6 +6,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { MediaComponent } from './pages/media/media.component';
 import { StoreComponent } from './pages/store/store.component';
 import { EPKComponent } from './pages/epk/epk.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 const routes: Routes = [
   {
@@ -32,6 +34,18 @@ const routes: Routes = [
   {
     path: 'press-kit',
     component: EPKComponent
+  },
+  // Angular routing modules will match routes with first-match logic
+  // based off their order in this array. Keep this at the end of the
+  // list so any path still not matched to the request will redirect
+  // to not-found;
+  {
+    path: 'not-found',
+    component: NotFoundComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found'
   },
 ];
 

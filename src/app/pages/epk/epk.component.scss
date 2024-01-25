@@ -41,7 +41,7 @@ a {
   color: white;
 
   &:hover {
-    color: $blow-house-red;
+    color: $primary-color;
   }
 }
 
@@ -74,13 +74,13 @@ td {
 }
 
 .promo-link {
-  color: $blow-house-red;
+  color: $primary-color;
 }
 
 .media-link a {
   text-decoration:underline;
 
   &:hover {
-  text-decoration-color: $blow-house-red;
+  text-decoration-color: $primary-color;
   }
 }

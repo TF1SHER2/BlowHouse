@@ -4,7 +4,7 @@
   </div>
   <div class="col-12 col-lg-8 col-xl-6 video-col">
     <div class="video-wrap">
-      <iframe width="100%" height="100%" [src]="activeVideo.url" [title]="activeVideo.title" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+      <iframe width="100%" height="100%" [src]="getSafeUrl(activeVideo.url)" [title]="activeVideo.title" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
     </div>
     <div class="title">
       {{ activeVideo.title }}
@@ -21,7 +21,7 @@
         <div class="thumb-title">{{ video.title }}</div>
       </ng-container>
     </div>
-    <div *ngIf="showLoadMore" class="load-more" (click)="onLoadMore()">
+    <div *ngIf="showLoadMore" class="theme-link" (click)="onLoadMore()">
       Load More
     </div>
   </div>

@@ -11,6 +11,7 @@ import { AppState, selectUrl } from 'src/app/ngrx/app.state';
 export class HeaderComponent implements OnInit, OnDestroy {
   subs: Subscription[] = [];
   isHome: boolean = false;
+  currentUrl: string = '';
 
   constructor(private store: Store<AppState>) { }
 
@@ -21,6 +22,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       } else {
         this.isHome = false;
       }
+    }));
+    this.subs.push(this.store.select(selectUrl).subscribe((url: string) => {
+      this.currentUrl = url;
     }));
   }
 

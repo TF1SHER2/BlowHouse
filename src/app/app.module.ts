@@ -16,8 +16,10 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { StoreComponent } from './pages/store/store.component';
 import { EPKComponent } from './pages/epk/epk.component';
 import { _globals } from './models/common';
-import { HeaderTextComponent } from './components/header-text/header-text.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +31,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MediaComponent,
     ContactComponent,
     StoreComponent,
-    HeaderTextComponent,
     EPKComponent,
+    NotFoundComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +58,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
       clientId: _globals.clientId,
       audience: _globals.audience,
     }),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
