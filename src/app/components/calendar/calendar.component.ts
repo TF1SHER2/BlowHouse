@@ -31,7 +31,7 @@ export class CalendarComponent implements OnInit {
   }
 
   loadMore() {
-    this.subs.push(this.calendarService.movePage(this.eventList, PageDirection.NEXT).subscribe((result) => {
+    this.subs.push(this.calendarService.movePage(this.eventList, PageDirection.NEXT, '10').subscribe((result) => {
       this.eventList = result;
       this.eventItems = this.eventItems.concat(this.eventList?.items);
 
