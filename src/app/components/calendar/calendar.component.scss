@@ -21,7 +21,7 @@
     }
 
     .time-col {
-      min-width: 70px;
+      min-width: 85px;
 
       @media(max-width: map-get($grid-breakpoints , "lg" )) {
         width: 100%;
