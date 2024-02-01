@@ -3,6 +3,19 @@ import { Injectable } from '@angular/core';
 import { PageDirection } from '../models/youtube.models';
 import { Observable, map } from 'rxjs';
 
+function getISODateString(d: Date) {
+  function pad(n: any) {
+    return n<10 ? '0'+n : n;
+  }
+  return d.getUTCFullYear()+'-'
+    + pad(d.getUTCMonth()+1)+'-'
+    + pad(d.getUTCDate())+'T'
+    + pad(d.getUTCHours())+':'
+    + pad(d.getUTCMinutes())+':'
+    + pad(d.getUTCSeconds())+'Z';
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +27,15 @@ export class CalendarService {
   constructor(public http: HttpClient) { }
 
   private getURL(pageSize?: string, pageToken?: string): string {
-    return 'https://www.googleapis.com/calendar/v3/calendars/' + this.CALENDAR_ID + '/events?calendarId=' + this.CALENDAR_ID + '%40group.calendar.google.com&key=' + this.CALENDAR_TOKEN + '&maxResults=' + ((pageSize != null) ? pageSize : this.maxPageSize) + ((pageToken) ? '&pageToken=' + pageToken : '');
+    let today: any = new Date();
+    today = getISODateString(today);
+    let requestUrl = 'https://www.googleapis.com/calendar/v3/calendars/' + this.CALENDAR_ID +
+      '/events?calendarId=' + this.CALENDAR_ID +
+      '%40group.calendar.google.com&key=' + this.CALENDAR_TOKEN +
+      '&timeMin=' + today +
+      '&maxResults=' + ((pageSize != null) ? pageSize : this.maxPageSize) +
+      ((pageToken) ? '&pageToken=' + pageToken : '');
+    return requestUrl;
   }
 
   private requestEvents(pageSize?: string, pageToken?: string): Observable<any> {
