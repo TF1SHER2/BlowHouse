@@ -33,6 +33,8 @@ export class CalendarService {
       '/events?calendarId=' + this.CALENDAR_ID +
       '%40group.calendar.google.com&key=' + this.CALENDAR_TOKEN +
       '&timeMin=' + today +
+      '&singleEvents=true' +
+      '&orderBy=startTime' +
       '&maxResults=' + ((pageSize != null) ? pageSize : this.maxPageSize) +
       ((pageToken) ? '&pageToken=' + pageToken : '');
     return requestUrl;
