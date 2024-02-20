@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     public authService: AuthenticationService,
     public config: NgbCarouselConfig
   ) {
-    config.interval = 5000; //5 seconds
-    config.wrap = false;
+    config.interval = 60000; //60 seconds
+    config.wrap = true;
     config.keyboard = false;
     config.pauseOnHover = false;
     config.showNavigationIndicators = false;

@@ -20,9 +20,10 @@
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"></iframe>
           </div>
-          <div class="col-12">
+          <!-- CALENDAR - HIDING TEMPORARILY
+            <div class="col-12">
             <app-calendar></app-calendar>
-          </div>
+          </div> -->
           <div class="image-container">
             <ngb-carousel>
               <!--
@@ -39,7 +40,30 @@
                   <p>This carousel uses customized default values.</p>
                 </div> -->
               </ng-template>
+              <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                  <img src="../../../assets/MerryWidow.jpg" alt="Image Of Blow House trombones" class="w-100 text-center" >
+                </div>
+              </ng-template>
+           <!--   <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                  <img src="../../../assets/LiveFromIronHand.jpg" alt="Image Of Blow House trombones" class="w-100 text-center img-fluid.max-with:80%;">
+                </div>
+                <br>
+                <a style="text-decoration: none;" href="https://open.spotify.com/album/37s5wdsy5rfAkdSKHZSBPp?si=wbvVBpvlSySvgmFsvOlGHw"><h1 class="text-center text-container">Live From Iron Hand</h1></a>
+              </ng-template> -->
+              <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                  <img src="../../../assets/press-photos/Trombones.JPG" alt="Image Of Blow House trombones" class="w-100 text-center" >
+                </div>
+              </ng-template>
             </ngb-carousel>
+          </div>
+          <div class="w-100 text-center py-2 py-md-3 fs-5">
+            <p>
+              "Blow House Brass Band exemplifies the new life and energy that keeps the city growing and thriving."
+              <br><i>- Lagniappe Weekly</i>
+            </p>
           </div>
         </div>
       </div>
