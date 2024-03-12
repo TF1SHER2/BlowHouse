@@ -20,6 +20,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { MediaCarouselComponent } from './components/media-carousel/media-carousel.component';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     EPKComponent,
     NotFoundComponent,
     CalendarComponent,
+    MediaCarouselComponent,
   ],
   imports: [
     BrowserModule,

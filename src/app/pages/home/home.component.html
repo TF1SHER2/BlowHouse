@@ -20,44 +20,11 @@
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"></iframe>
           </div>
-          <!-- CALENDAR - HIDING TEMPORARILY
             <div class="col-12">
-            <app-calendar></app-calendar>
-          </div> -->
+               <app-calendar></app-calendar>
+            </div> 
           <div class="image-container">
-            <ngb-carousel>
-              <!--
-                Additional slides can be added by adding additional ng-template blocks
-                with the ngbSlide directive. You can also put an *ngFor loop on the
-                ng-template block and dynamically iterate over an array of images if needed
-               -->
-              <ng-template ngbSlide>
-                <div class="picsum-img-wrapper">
-                  <img src="../../../assets/FNL.jpg" alt="Image Of Blow House on playing in Cathedral Square" class="w-100 text-center" width="100%">
-                </div>
-                <!-- <div class="carousel-caption">
-                  <h3>10 seconds between slides...</h3>
-                  <p>This carousel uses customized default values.</p>
-                </div> -->
-              </ng-template>
-              <ng-template ngbSlide>
-                <div class="picsum-img-wrapper">
-                  <img src="../../../assets/MerryWidow.jpg" alt="Image Of Blow House trombones" class="w-100 text-center" >
-                </div>
-              </ng-template>
-           <!--   <ng-template ngbSlide>
-                <div class="picsum-img-wrapper">
-                  <img src="../../../assets/LiveFromIronHand.jpg" alt="Image Of Blow House trombones" class="w-100 text-center img-fluid.max-with:80%;">
-                </div>
-                <br>
-                <a style="text-decoration: none;" href="https://open.spotify.com/album/37s5wdsy5rfAkdSKHZSBPp?si=wbvVBpvlSySvgmFsvOlGHw"><h1 class="text-center text-container">Live From Iron Hand</h1></a>
-              </ng-template> -->
-              <ng-template ngbSlide>
-                <div class="picsum-img-wrapper">
-                  <img src="../../../assets/press-photos/Trombones.JPG" alt="Image Of Blow House trombones" class="w-100 text-center" >
-                </div>
-              </ng-template>
-            </ngb-carousel>
+            <app-media-carousel></app-media-carousel>
           </div>
           <div class="w-100 text-center py-2 py-md-3 fs-5">
             <p>

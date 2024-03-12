@@ -4,7 +4,6 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { AppState } from '../../ngrx/app.state';
 import { AuthenticationService } from '../../services/authentication.service';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -19,15 +18,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private store: Store<AppState>,
     public authService: AuthenticationService,
-    public config: NgbCarouselConfig
-  ) {
-    config.interval = 60000; //60 seconds
-    config.wrap = true;
-    config.keyboard = false;
-    config.pauseOnHover = false;
-    config.showNavigationIndicators = false;
-    config.showNavigationArrows = false;
-  }
+  ) { }
 
   ngOnInit(): void {
     this.store.dispatch(setContainerTypeAction({ containerType: 'normal' }));
