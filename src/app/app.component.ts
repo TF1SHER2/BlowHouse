@@ -1,10 +1,11 @@
 import { setScreenWidthAction } from './ngrx/actions/global.actions';
-import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { AppBreakpoints, AppState, selectContainerType, selectScreenWidth } from './ngrx/app.state';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { ScreenWidth } from './models/screenWidth';
+import { inject } from '@vercel/analytics';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ import { ScreenWidth } from './models/screenWidth';
 })
 
 
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   title = 'BlowHouse';
   subs: Subscription[] = [];
@@ -66,6 +67,10 @@ export class AppComponent implements OnInit, OnDestroy {
         this.screenWidth = screenWidth;
       })
     );
+  }
+
+  ngAfterViewInit(): void {
+    inject();
   }
 
   private generateBreakpointString(breakpoint: AppBreakpoints): string {
