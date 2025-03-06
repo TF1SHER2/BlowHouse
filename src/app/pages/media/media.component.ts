@@ -33,6 +33,7 @@ export class MediaComponent implements OnInit, OnDestroy {
     'Spotify',
     'https://open.spotify.com/artist/5eFDkvvIjHSaKorew9SD1E?si=7fyyv6lFQsGj1zdkV0TPNg'
   ];
+  sanitizedUrl: SafeResourceUrl | undefined;
 
   constructor(private store: Store<AppState>,
               private youtubeService: YoutubeService,
@@ -43,6 +44,7 @@ export class MediaComponent implements OnInit, OnDestroy {
 
     this.subs.push(this.youtubeService.getPlayList('PLjv-8DmGH7xepShhoDKfMS9fibDL0nrNQ', this.pageSize).subscribe((playList: PlayList) => {
       this.addVideosFromPlayList(playList, 'init');
+      this.updateSanitizedUrl();
     }));
   }
 
@@ -87,8 +89,10 @@ export class MediaComponent implements OnInit, OnDestroy {
     this.playList = playList;
   }
 
-  getSafeUrl(url: string) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  updateSanitizedUrl(): void {
+    if (this.activeVideo?.url) {
+      this.sanitizedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.activeVideo.url);
+    }
   }
 
   onThumbClick(i: number) {
@@ -98,6 +102,7 @@ export class MediaComponent implements OnInit, OnDestroy {
       description: this.videos[i].description,
       url: this.videoUrls[i],
     };
+    this.updateSanitizedUrl();
     this.scrollToTop();
   }
 
