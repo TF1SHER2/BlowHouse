@@ -6,6 +6,7 @@ import { AppBreakpoints, AppState, selectContainerType, selectScreenWidth } from
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { ScreenWidth } from './models/screenWidth';
 import { inject } from '@vercel/analytics';
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
 @Component({
   selector: 'app-root',
@@ -71,6 +72,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     inject();
+    injectSpeedInsights();
   }
 
   private generateBreakpointString(breakpoint: AppBreakpoints): string {
