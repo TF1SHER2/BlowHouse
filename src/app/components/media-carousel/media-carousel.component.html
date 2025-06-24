@@ -1,32 +1,26 @@
-    <ngb-carousel>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="..." crossorigin="anonymous">   
 
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img src="../../../assets/FNL.jpg" alt="Image Of Blow House on playing in Cathedral Square" class="w-100 text-center" width="100%">
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img src="../../../assets/destroyer.jpg" alt="Image Of Blow House welcoming a naval destroyer" class="w-100 text-center" width="100%">
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img src="../../../assets/MerryWidow.jpg" alt="Image Of Blow House trombones" class="w-100 text-center" >
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img src="../../../assets/press-photos/Trombones.JPG" alt="Image Of Blow House trombones" class="w-100 text-center" >
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img src="../../../assets//ballroom.JPG" alt="Image Of Blow House trombones" class="w-100 text-center" >
-        </div>
-      </ng-template>
-    
-    </ngb-carousel>
-    <!--           
-        <img src="../../../assets/LiveFromIronHand.jpg" alt="Live From Iron Hand Album cover" class=" w-100 text-center album-img">
-    -->
+   <div class="image-container"
+     (mouseenter)="onMouseEnter()"
+     (mouseleave)="onMouseLeave()">
+
+  <!-- Fade-to-black overlay -->
+  <div class="overlay" [class.fade-active]="fadeOverlay"></div>
+
+  <!-- Image -->
+  <img
+    [src]="currentImage"
+    alt="Random Image"
+    *ngIf="currentImage"
+    class="fade"
+  />
+
+  <!-- Navigation buttons -->
+<button class="nav-button left" (click)="showPreviousImage()">
+  <i class="fas fa-chevron-left"></i>
+</button>
+<button class="nav-button right" (click)="showNextImage()">
+  <i class="fas fa-chevron-right"></i>
+</button>
+
+</div>
