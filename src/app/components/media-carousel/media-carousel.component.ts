@@ -20,8 +20,8 @@ export class MediaCarouselComponent implements OnInit, OnDestroy {
         config.wrap = true;
         config.keyboard = false;
         config.pauseOnHover = false;
-        config.showNavigationIndicators = false;
-        config.showNavigationArrows = false;
+        config.showNavigationIndicators = true;
+        config.showNavigationArrows = true;
    }
 
   ngOnInit(): void {
