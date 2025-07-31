@@ -23,9 +23,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.store.dispatch(setContainerTypeAction({ containerType: 'normal' }));
 
-    this.subs.push(this.authService.getUserPermissions().subscribe((permissions) => {
-      // console.log(permissions);
-    }));
+    // Defer non-critical auth check
+    setTimeout(() => {
+      this.subs.push(this.authService.getUserPermissions().subscribe((permissions) => {
+        // console.log(permissions);
+      }));
+    }, 2000);
   }
 
   ngOnDestroy(): void {
