@@ -10,11 +10,13 @@
   font-family: Anton;
   src: url('./assets/fonts/Anton-Regular.ttf') format('truetype');
   font-weight: regular;
+  font-display: swap;
 }
 @font-face{
   font-family: CloisterBlack;
   src: url('./assets/fonts/CloisterBlack.ttf') format('truetype');
   font-weight: regular;
+  font-display: swap;
 }
 
 body {

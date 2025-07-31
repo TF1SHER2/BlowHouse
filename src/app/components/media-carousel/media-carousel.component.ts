@@ -16,7 +16,7 @@ export class MediaCarouselComponent implements OnInit, OnDestroy {
   constructor(private store: Store<AppState>,
     public config: NgbCarouselConfig
     ) {
-        config.interval = 80000; //60 seconds
+        config.interval = 8000; // 8 seconds
         config.wrap = true;
         config.keyboard = false;
         config.pauseOnHover = false;

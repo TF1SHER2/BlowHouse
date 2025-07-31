@@ -2,7 +2,7 @@
 <div class="row align-items-center">
   <div class="col-12 col-md-3 text-center">
     <img src="../../../assets/logo-inverse.png" alt="Image Of Black Blow House Logo"
-      class="w-100 text-center inverse-logo">
+      class="w-100 text-center inverse-logo" loading="lazy">
   </div>
   <div class="col">
     <h1 class="press-header text-center">
@@ -59,7 +59,7 @@
   <h2 class="press-header">Press Photos</h2>
   <div class="row mx-0 justify-content-center">
     <div *ngFor="let photoName of pressPhotosMap" class="col-lg-4 col-md-6 col-12 px-0">
-      <img class="press-image" [src]="'../../../assets/press-photos/' + photoName" [alt]='"Photo of " + photoName'>
+      <img class="press-image" [src]="'../../../assets/press-photos/' + photoName" [alt]='"Photo of " + photoName' loading="lazy">
     </div>
   </div>
   <p>Pictures and vidoes for Press and Promotional Use can be found
@@ -73,12 +73,12 @@
   <h2 class="press-header">Contact</h2>
   <div class="row justify-content-center align-items-center">
     <div class="col-auto">
-      <img src="../../../assets/IMG-8622.JPG" alt="Contact Us" class="contact-photo">
+      <img src="../../../assets/IMG-8622.JPG" alt="Contact Us" class="contact-photo" loading="lazy">
     </div>
     <div class="col-auto">
       <table class="center">
         <tr><td><a [routerLink]="'/'" class="col-auto" target="_blank">BlowHouseBrass.com</a></td></tr>
-        <tr><td><a href="mailto:blowhousebrass@gmail.com" target="_blank">BlowHouseBrass@gmail.com</a></td></tr>
+        <tr><td><a href="mailto:blowhousebrass@gmail.com" target="_blank">BlowHouseBrass&#64;gmail.com</a></td></tr>
          <tr><td>Andrew Landry - (251) 455-9404</td></tr>
          <tr><td>Jonathan Landry - (251) 472-5659</td></tr>
         <tr><td>David Anthony - (251) 753-0019</td></tr>
