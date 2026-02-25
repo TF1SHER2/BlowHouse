@@ -24,18 +24,14 @@ export class CalendarComponent implements OnInit {
       this.eventList = result;
       this.eventItems = this.eventList?.items;
 
+      if (this.eventList?.items && this.eventList?.items.length > 0) {
+        this.showCalendar = true;
+      }
+
       if (this.eventList.nextPageToken) {
         this.showLoadMore = true;
       } else {
         this.showLoadMore = false;
-      }
-    }));
-
-    this.subs.push(this.calendarService.getEvents('1').subscribe((result) => {
-      if (this.eventItems.getEvents > 0) {
-        this.showCalendar = true;        
-      } else {
-        this.showCalendar = false; 
       }
     }));
   }
