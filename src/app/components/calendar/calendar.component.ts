@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { resultMemoize } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { PageDirection } from 'src/app/models/youtube.models';
 import { CalendarService } from 'src/app/services/calendar.service';
@@ -14,6 +15,7 @@ export class CalendarComponent implements OnInit {
   eventItems: any[] = [];
   eventList: any;
   showLoadMore = false;
+  showCalendar = false;
 
   constructor(private calendarService: CalendarService) { }
 
@@ -26,6 +28,14 @@ export class CalendarComponent implements OnInit {
         this.showLoadMore = true;
       } else {
         this.showLoadMore = false;
+      }
+    }));
+
+    this.subs.push(this.calendarService.getEvents('1').subscribe((result) => {
+      if (this.eventItems.getEvents > 0) {
+        this.showCalendar = true;        
+      } else {
+        this.showCalendar = false; 
       }
     }));
   }
@@ -42,4 +52,6 @@ export class CalendarComponent implements OnInit {
       }
     }));
   }
+
+  
 }

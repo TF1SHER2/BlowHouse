@@ -31,7 +31,8 @@ export class MediaComponent implements OnInit, OnDestroy {
     'https://www.instagram.com/blow_house',
     '►',
     'Spotify',
-    'https://open.spotify.com/artist/5eFDkvvIjHSaKorew9SD1E?si=7fyyv6lFQsGj1zdkV0TPNg'
+    'https://open.spotify.com/artist/5eFDkvvIjHSaKorew9SD1E?si=7fyyv6lFQsGj1zdkV0TPNg',
+    'https://open.spotify.com/artist/5eFDkvvIjHSaKorew9SD1E?si=xMYybNDDTIG5TSCAQyn3lA'
   ];
   sanitizedUrl: SafeResourceUrl | undefined;
 
