@@ -11,7 +11,7 @@ import { CalendarService } from 'src/app/services/calendar.service';
 export class CalendarComponent implements OnInit {
 
   subs = new Array<Subscription>();
-  eventItems: any;
+  eventItems: any[] = [];
   eventList: any;
   showLoadMore = false;
 

@@ -71,8 +71,11 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    inject();
-    injectSpeedInsights();
+    // Defer analytics to avoid blocking main thread
+    setTimeout(() => {
+      inject();
+      injectSpeedInsights();
+    }, 1000);
   }
 
   private generateBreakpointString(breakpoint: AppBreakpoints): string {

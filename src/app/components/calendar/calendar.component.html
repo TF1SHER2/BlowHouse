@@ -1,4 +1,4 @@
-<div class="row">
+<div *ngIf="eventItems && eventItems.length > 0" class="row">
   <h2 class="col-12 pt-5">Upcoming Events</h2>
   <div class="col-12">
     <ng-container *ngFor="let event of eventItems; let i = index;">
